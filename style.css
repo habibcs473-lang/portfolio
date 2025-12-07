@@ -2,88 +2,88 @@
 * {
     margin: 0;
     padding: 0;
-    cursor:pointer;
+    cursor: pointer;
     box-sizing: border-box;
 }
 
 html,
 body {
-font-family: "poppines" sans-serif;
+    font-family: "Poppins", sans-serif;
     color: #111;
     scroll-behavior: smooth;
 }
+
 /* Background Video Container */
 .video-bg {
-    position: fixed;       /* stays behind on scroll */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -1;           /* keeps it behind the site UI */
+    z-index: -1;
 }
-.logo{
+
+.video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.logo {
     position: relative;
-    font-size: 25px;
+    font-size: 50px;
     color: #aa540d;
     text-decoration: none;
     font-weight: 900;
-    font-size: 50px;
-   font-family: "dancing script";
+    font-family: "Dancing Script", cursive;
     width: 100%;
     height: 100%;
     padding: 20px;
 }
 
-.btn-box a{
+.btn-box a {
     position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 150px;
-    height: 150%;
+    height: 50px;
     background: rgb(218, 96, 9);
     border: 2px solid rgb(20, 19, 17);
     border-radius: 12px;
     font-size: 19px;
-    color:#081b29;
+    color: #081b29;
     text-decoration: none;
     font-weight: 600;
     z-index: 1;
     overflow: hidden;
 }
-.btn-box  a:nth-child{
+
+.btn-box a:nth-child(2) {
     background: transparent;
     color: rgb(218, 96, 9);
 }
-.btn-box a::before{
+
+.btn-box a::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 0;
     height: 100%;
-    background: rgb(150, 108, 77) ;
+    background: rgb(150, 108, 77);
     z-index: -1;
     transition: .5s;
 }
-.btn-box a:hover::before{
+
+.btn-box a:hover::before {
     width: 100%;
 }
-
-/* Video Element */
-.video-bg video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;     /* crops perfectly like CSS background-size: cover */
-    filter: brightness(0.6); /* optional: darken for readable text */
-}
-
-
 
 /* Hero Section */
 .hero {
-
     height: 100vh;
     width: 100%;
     position: relative;
@@ -99,11 +99,8 @@ font-family: "poppines" sans-serif;
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.3);
-      background: rgba(73, 66, 66, 0.5);
+    background: rgba(73, 66, 66, 0.5);
     backdrop-filter: blur(2px);
-        animation: fade 6s infinite;
-
 }
 
 .hero .content {
@@ -141,7 +138,6 @@ h1 {
 .name {
     font-weight: 700;
     color: #fff;
-   
 }
 
 .title {
@@ -149,54 +145,55 @@ h1 {
     font-size: 28px;
     color: #ff8c00;
     font-weight: 500;
-    
 }
 
-/* Nav Button */
+/* ============================================
+   NAV BUTTON - SIMPLE & CLEAN
+   ============================================ */
 .nav-btn {
-    margin-top: 50px;
-    background: linear-gradient(135deg, #ff9933 0%, #ff8800 100%);
-    border: none;
     position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    background: linear-gradient(135deg, #ff9933 0%, #ff8800 100%);
     backdrop-filter: blur(15px);
-   -webkit-backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border-radius: 50px;
-    padding: 18px 40px;
-    display: inline-flex;
+    padding: 12px 30px;
+    display: flex;
     align-items: center;
-    gap: 25px;
-   
-
+    justify-content: center;
+    gap: 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(255, 140, 0, 0.4);
+    border: none;
 }
-
-
 
 .menu-icon {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 4px;
 }
 
 .menu-icon span {
-    width: 28px;
-    height: 3px;
+    width: 24px;
+    height: 2.5px;
     background: #fff;
     border-radius: 2px;
 }
 
 .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     transition: color 0.3s;
 }
@@ -408,7 +405,7 @@ h1 {
     font-size: 16px;
 }
 
-/* Projects Section (Detailed) */
+/* Projects Section */
 .projects-section {
     padding: 80px 7%;
     background: #1d1d1d;
@@ -420,12 +417,6 @@ h1 {
 .projects-section .project-card {
     background: transparent;
     box-shadow: none;
-}
-
-.project-img {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 20px;
 }
 
 .project-title {
@@ -489,7 +480,6 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 20px;
-    color: #b1780e;
 }
 
 .social-icons a {
@@ -528,7 +518,6 @@ h1 {
     0% {
         transform: translateX(0%);
     }
-
     100% {
         transform: translateX(-100%);
     }
@@ -541,11 +530,20 @@ h1 {
     padding-bottom: 30px;
 }
 
-/* Responsive Design */
+/* ============================================
+   MOBILE RESPONSIVE - PERFECT NAV BAR
+   ============================================ */
+
+/* Tablet - 768px */
 @media (max-width: 768px) {
+    .logo {
+        font-size: 35px;
+    }
+
     .hero {
-        padding-left: 40px;
-        padding-right: 40px;
+        padding: 0 30px 90px;
+        text-align: center;
+        justify-content: center;
     }
 
     h1 {
@@ -557,12 +555,38 @@ h1 {
     }
 
     .title {
-        font-size: 22px;
+        font-size: 20px;
+    }
+
+    /* NAV BAR - TABLET */
+    .nav-btn {
+        padding: 10px 20px;
+        gap: 12px;
+        bottom: 10px;
+        max-width: 95%;
+    }
+
+    .menu-icon span {
+        width: 20px;
+        height: 2px;
     }
 
     .nav-links {
-        flex-wrap: wrap;
-        gap: 15px;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .about-section,
+    .work-section,
+    .projects-section {
+        padding: 60px 5%;
+    }
+
+    .contact-section {
+        padding: 60px 5% 90px;
     }
 
     .section-title {
@@ -582,7 +606,16 @@ h1 {
     }
 }
 
+/* Mobile - 480px */
 @media (max-width: 480px) {
+    .logo {
+        font-size: 28px;
+    }
+
+    .hero {
+        padding: 0 20px 100px;
+    }
+
     h1 {
         font-size: 36px;
     }
@@ -591,11 +624,146 @@ h1 {
         font-size: 24px;
     }
 
+    .title {
+        font-size: 16px;
+    }
+
+    .btn-box a {
+        width: 120px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    /* NAV BAR - MOBILE (SIMPLE 1 LINE) */
     .nav-btn {
-        padding: 15px 30px;
+        padding: 8px 15px;
+        gap: 8px;
+        bottom: 8px;
+        max-width: 96%;
+        border-radius: 30px;
+    }
+
+    .menu-icon {
+        display: none; /* Hide icon on small mobile */
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+        padding: 4px 6px;
+    }
+
+    .about-section,
+    .work-section,
+    .projects-section {
+        padding: 40px 4%;
+    }
+
+    .contact-section {
+        padding: 40px 4% 100px;
     }
 
     .section-title {
         font-size: 28px;
+    }
+
+    .description,
+    .work-description {
+        font-size: 14px;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    .circle-btn {
+        width: 140px;
+        height: 140px;
+    }
+
+    .circle-btn span {
+        font-size: 20px;
+    }
+
+    .footer-name {
+        font-size: 50px;
+    }
+
+    .footer-copy {
+        font-size: 11px;
+    }
+}
+
+/* Extra Small Mobile - 360px */
+@media (max-width: 360px) {
+    .logo {
+        font-size: 24px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .intro {
+        font-size: 22px;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+
+    /* NAV BAR - EXTRA SMALL */
+    .nav-btn {
+        padding: 6px 12px;
+        gap: 6px;
+        bottom: 5px;
+        border-radius: 25px;
+    }
+
+    .nav-links {
+        gap: 5px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+        padding: 3px 5px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .about-section,
+    .work-section,
+    .projects-section {
+        padding: 35px 3%;
+    }
+
+    .contact-section {
+        padding: 35px 3% 100px;
+    }
+
+    .footer-name {
+        font-size: 40px;
+    }
+}
+
+/* Desktop Large */
+@media (min-width: 1920px) {
+    .nav-btn {
+        padding: 15px 40px;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        font-size: 17px;
+    }
+
+    .menu-icon span {
+        width: 28px;
+        height: 3px;
     }
 }
