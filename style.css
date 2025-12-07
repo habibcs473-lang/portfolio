@@ -1,0 +1,601 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    cursor:pointer;
+    box-sizing: border-box;
+}
+
+html,
+body {
+font-family: "poppines" sans-serif;
+    color: #111;
+    scroll-behavior: smooth;
+}
+/* Background Video Container */
+.video-bg {
+    position: fixed;       /* stays behind on scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;           /* keeps it behind the site UI */
+}
+.logo{
+    position: relative;
+    font-size: 25px;
+    color: #aa540d;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 50px;
+   font-family: "dancing script";
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.btn-box a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150%;
+    background: rgb(218, 96, 9);
+    border: 2px solid rgb(20, 19, 17);
+    border-radius: 12px;
+    font-size: 19px;
+    color:#081b29;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 1;
+    overflow: hidden;
+}
+.btn-box  a:nth-child{
+    background: transparent;
+    color: rgb(218, 96, 9);
+}
+.btn-box a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgb(150, 108, 77) ;
+    z-index: -1;
+    transition: .5s;
+}
+.btn-box a:hover::before{
+    width: 100%;
+}
+
+/* Video Element */
+.video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* crops perfectly like CSS background-size: cover */
+    filter: brightness(0.6); /* optional: darken for readable text */
+}
+
+
+
+/* Hero Section */
+.hero {
+
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 80px;
+    color: #fff;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+      background: rgba(73, 66, 66, 0.5);
+    backdrop-filter: blur(2px);
+        animation: fade 6s infinite;
+
+}
+
+.hero .content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 72px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.hello {
+    color: #ff8c00;
+}
+
+.comma {
+    color: #fff;
+}
+
+.intro {
+    font-size: 48px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.im {
+    color: #ff8c00;
+    font-weight: 700;
+}
+
+.name {
+    font-weight: 700;
+    color: #fff;
+   
+}
+
+.title {
+    margin-top: 10px;
+    font-size: 28px;
+    color: #ff8c00;
+    font-weight: 500;
+    
+}
+
+/* Nav Button */
+.nav-btn {
+    margin-top: 50px;
+    background: linear-gradient(135deg, #ff9933 0%, #ff8800 100%);
+    border: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    backdrop-filter: blur(15px);
+   -webkit-backdrop-filter: blur(15px);
+    border-radius: 50px;
+    padding: 18px 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+   
+
+}
+
+
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-icon span {
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #b17a44;
+}
+
+/* About Section */
+.about-section {
+    background: url("/assets/pexels-danny-meneses-340146-943096.jpg") center/cover no-repeat;
+    padding: 100px 7%;
+    text-align: center;
+    color: #fa7305;
+    position: relative;
+}
+
+.about-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(73, 66, 66, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 0;
+}
+
+.about-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fd7b02;
+}
+
+.about-section .intro {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #e96e09;
+}
+
+.description {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+    font-size: 18px;
+    color: #e96e09;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #9b4f11;
+}
+
+.btn-more {
+    background: #be6115;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-more:hover {
+    background: #aa540d;
+    transform: translateY(-2px);
+}
+
+.arrow {
+    font-size: 20px;
+}
+
+/* Work Section */
+.work-section {
+    padding: 80px 7%;
+    background: linear-gradient(to bottom, #1a1a1a 0%, #000 100%);
+    position: relative;
+}
+
+.work-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.work-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.work-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.work-section .section-title {
+    font-size: 48px;
+    color: #ff8c00;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.work-description {
+    font-size: 18px;
+    color: #d4a574;
+    line-height: 1.8;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 140, 0, 0.3);
+}
+
+.project-image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: #2c2c2c;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.1);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.view-btn {
+    background: #ff8c00;
+    color: #000;
+    border: none;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+    background: #ffa500;
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    color: #ff8c00;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.project-info p {
+    color: #999;
+    font-size: 16px;
+}
+
+/* Projects Section (Detailed) */
+.projects-section {
+    padding: 80px 7%;
+    background: #1d1d1d;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 50px;
+}
+
+.projects-section .project-card {
+    background: transparent;
+    box-shadow: none;
+}
+
+.project-img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.project-title {
+    font-size: 28px;
+    color: #ff8a00;
+    margin-bottom: 15px;
+}
+
+.project-desc {
+    font-size: 16px;
+    color: #d7d7d7;
+    line-height: 1.7;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 7%;
+    background: #1d1d1d;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #ff8a00;
+    text-decoration: underline;
+}
+
+.circle-btn {
+    width: 220px;
+    height: 220px;
+    background: #d68135;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.circle-btn span {
+    font-size: 28px;
+    font-weight: 600;
+    color: #2a2a2a;
+}
+
+.circle-btn:hover {
+    transform: scale(1.05);
+}
+
+.email {
+    font-size: 22px;
+    color: #b1780e;
+    margin: 30px 0;
+}
+
+.social-icons {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: #b1780e;
+}
+
+.social-icons a {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    filter: brightness(80%);
+    transition: 0.3s ease;
+}
+
+.social-icons img:hover {
+    filter: brightness(120%);
+    transform: scale(1.1);
+}
+
+.moving-footer {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 50px;
+}
+
+.footer-name {
+    display: inline-block;
+    font-size: 150px;
+    color: #eb8f05;
+    font-weight: 400;
+    animation: moveFooter 15s linear infinite;
+}
+
+@keyframes moveFooter {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.footer-copy {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #c78348;
+    padding-bottom: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    .intro {
+        font-size: 32px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-section {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-name {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    .intro {
+        font-size: 24px;
+    }
+
+    .nav-btn {
+        padding: 15px 30px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+}
